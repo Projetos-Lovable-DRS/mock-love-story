@@ -76,8 +76,8 @@ function ReportsPage() {
 
   const tooltipStyle = {
     borderRadius: 12,
-    border: "1px solid var(--color-border)",
-    background: "var(--color-card)",
+    border: "1px solid var(--border)",
+    background: "var(--card)",
     fontSize: 12,
   };
 
@@ -101,12 +101,12 @@ function ReportsPage() {
           <div className="mt-5 h-[260px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={series}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
                 <XAxis dataKey="mes" tickLine={false} axisLine={false} fontSize={12} />
                 <YAxis tickLine={false} axisLine={false} fontSize={12} width={70} />
                 <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => brl(v)} />
-                <Bar dataKey="receitas" fill="var(--color-mint)" radius={[6, 6, 0, 0]} />
-                <Bar dataKey="despesas" fill="var(--color-clay)" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="receitas" fill="var(--mint)" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="despesas" fill="var(--clay)" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -117,14 +117,14 @@ function ReportsPage() {
           <div className="mt-5 h-[260px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={saldoSeries}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
                 <XAxis dataKey="mes" tickLine={false} axisLine={false} fontSize={12} />
                 <YAxis tickLine={false} axisLine={false} fontSize={12} width={70} />
                 <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => brl(v)} />
                 <Line
                   type="monotone"
                   dataKey="saldo"
-                  stroke="var(--color-mint-deep)"
+                  stroke="var(--mint-deep)"
                   strokeWidth={2.5}
                   dot={{ r: 3 }}
                 />
